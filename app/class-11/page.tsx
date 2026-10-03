@@ -456,7 +456,7 @@ export default function Class11Page() {
                 </div>
 
                 {/* Code example - Only display for coding chapters (HTML/CSS), hidden for Multimedia */}
-                {selectedChapter?.category !== 'multimedia' && activeTopic.codeExample && (
+                {currentChapter.category !== 'multimedia' && activeTopic.codeExample && (
                   <div>
                     <h3 className="text-xs sm:text-sm font-semibold text-white/70 mb-2 flex items-center gap-2">
                       <Code2 className="w-4 h-4 text-white/40 shrink-0" />
