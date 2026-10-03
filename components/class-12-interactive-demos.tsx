@@ -474,13 +474,13 @@ function FileSystemVsDbmsDemo() {
   return (
     <div className="space-y-4">
       {/* Architecture Toggle */}
-      <div className="flex gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <button
           onClick={() => {
             setArchitecture('files');
             handleReset();
           }}
-          className={`flex-1 py-2 px-3 rounded-xl text-xs font-semibold border transition-all ${
+          className={`w-full py-2.5 px-3 rounded-xl text-xs font-semibold border transition-all ${
             architecture === 'files'
               ? 'bg-rose-500/20 text-rose-300 border-rose-400 shadow-md'
               : 'bg-slate-800 text-white/60 border-slate-700 hover:text-white'
@@ -493,7 +493,7 @@ function FileSystemVsDbmsDemo() {
             setArchitecture('dbms');
             handleReset();
           }}
-          className={`flex-1 py-2 px-3 rounded-xl text-xs font-semibold border transition-all ${
+          className={`w-full py-2.5 px-3 rounded-xl text-xs font-semibold border transition-all ${
             architecture === 'dbms'
               ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400 shadow-md'
               : 'bg-slate-800 text-white/60 border-slate-700 hover:text-white'
@@ -645,7 +645,7 @@ function DbmsArchitectureDemo() {
   return (
     <div className="space-y-4">
       {/* Layer selector */}
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
         {[
           { id: 'external', label: '1. External / View Level', icon: '👤', desc: 'User-Specific Custom Views' },
           { id: 'conceptual', label: '2. Conceptual / Logical', icon: '🧠', desc: 'All Entities & Schema' },
@@ -795,27 +795,27 @@ function FieldsRecordsTablesDemo() {
   return (
     <div className="space-y-4">
       {/* Controls & Metrics */}
-      <div className="flex flex-wrap items-center justify-between gap-2 bg-slate-900/80 p-3 rounded-xl border border-white/10">
-        <div className="flex gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-2 bg-slate-900/80 p-2.5 sm:p-3 rounded-xl border border-white/10">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           <button
             onClick={() => setHighlightMode(highlightMode === 'column' ? 'none' : 'column')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
+            className={`px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
               highlightMode === 'column'
                 ? 'bg-cyan-500 text-slate-950 border-cyan-400 font-bold'
                 : 'bg-slate-800 text-white/70 border-slate-700 hover:text-white'
             }`}
           >
-            Highlight Field (Attribute)
+            Highlight Field <span className="hidden sm:inline">(Attribute)</span>
           </button>
           <button
             onClick={() => setHighlightMode(highlightMode === 'row' ? 'none' : 'row')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
+            className={`px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
               highlightMode === 'row'
                 ? 'bg-purple-500 text-white border-purple-400 font-bold'
                 : 'bg-slate-800 text-white/70 border-slate-700 hover:text-white'
             }`}
           >
-            Highlight Record (Tuple)
+            Highlight Record <span className="hidden sm:inline">(Tuple)</span>
           </button>
         </div>
 
@@ -1066,36 +1066,36 @@ function DatabaseModelsDemo() {
   return (
     <div className="space-y-4">
       {/* Model Selector */}
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
         <button
           onClick={() => setModel('hierarchical')}
-          className={`p-2.5 rounded-xl border text-xs font-semibold transition-all ${
+          className={`p-2 sm:p-2.5 rounded-xl border text-xs font-semibold transition-all ${
             model === 'hierarchical'
               ? 'bg-amber-500/30 text-amber-300 border-amber-400 shadow-md'
               : 'bg-slate-800 text-white/60 border-slate-700'
           }`}
         >
-          🌲 Hierarchical (Tree 1:N)
+          🌲 Hierarchical <span className="text-[11px] opacity-75">(Tree 1:N)</span>
         </button>
         <button
           onClick={() => setModel('network')}
-          className={`p-2.5 rounded-xl border text-xs font-semibold transition-all ${
+          className={`p-2 sm:p-2.5 rounded-xl border text-xs font-semibold transition-all ${
             model === 'network'
               ? 'bg-purple-500/30 text-purple-300 border-purple-400 shadow-md'
               : 'bg-slate-800 text-white/60 border-slate-700'
           }`}
         >
-          🕸️ Network (Web M:N)
+          🕸️ Network <span className="text-[11px] opacity-75">(Web M:N)</span>
         </button>
         <button
           onClick={() => setModel('relational')}
-          className={`p-2.5 rounded-xl border text-xs font-semibold transition-all ${
+          className={`p-2 sm:p-2.5 rounded-xl border text-xs font-semibold transition-all ${
             model === 'relational'
               ? 'bg-blue-500/30 text-blue-300 border-blue-400 shadow-md'
               : 'bg-slate-800 text-white/60 border-slate-700'
           }`}
         >
-          📊 Relational (Tables)
+          📊 Relational <span className="text-[11px] opacity-75">(Tables)</span>
         </button>
       </div>
 
@@ -1215,7 +1215,11 @@ function ErDiagramBuilderDemo() {
       </div>
 
       {/* Peter Chen ER Canvas */}
-      <div className="bg-slate-950 border border-fuchsia-500/30 rounded-2xl p-4 sm:p-6 overflow-x-auto min-w-[320px]">
+      <div className="space-y-1">
+        <span className="text-[10px] text-fuchsia-300/60 block sm:hidden font-mono text-center">
+          👉 Swipe horizontally to inspect full ER diagram
+        </span>
+        <div className="bg-slate-950 border border-fuchsia-500/30 rounded-2xl p-3 sm:p-6 overflow-x-auto min-w-[300px]">
         <svg viewBox="0 0 600 240" className="w-full h-auto min-w-[500px]">
           {/* Connector lines */}
           <line x1="120" y1="120" x2="300" y2="120" stroke="#a855f7" strokeWidth="2.5" />

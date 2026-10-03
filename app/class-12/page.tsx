@@ -77,29 +77,30 @@ export default function Class12Page() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8">
         {/* Navigation & Header */}
         <header className="space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-2.5">
             <button
               onClick={() => router.push('/')}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 text-white/70 hover:text-white text-xs sm:text-sm font-medium transition-all"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 text-white/70 hover:text-white text-xs sm:text-sm font-medium transition-all"
             >
-              <ArrowLeft className="w-4 h-4" />
-              <span>Back to Grade Selection</span>
+              <ArrowLeft className="w-4 h-4 shrink-0" />
+              <span>Grades</span>
+              <span className="hidden sm:inline">Selection</span>
             </button>
-            <div className="flex items-center gap-2">
-              <span className="px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] sm:text-xs font-bold">
-                Class 12 CS Curriculum
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-mono text-[10px] sm:text-xs font-bold">
+                Class 12 DBMS
               </span>
-              <span className="px-2.5 py-1 rounded-full bg-teal-500/15 border border-teal-500/30 text-teal-300 font-mono text-[11px] sm:text-xs">
-                {totalTopics} Interactive Topics
+              <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-teal-500/15 border border-teal-500/30 text-teal-300 font-mono text-[10px] sm:text-xs">
+                {totalTopics} Topics
               </span>
             </div>
           </div>
 
-          <div className="space-y-2">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300 bg-clip-text text-transparent">
+          <div className="space-y-1.5 sm:space-y-2">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300 bg-clip-text text-transparent">
               Class 12: Database Management System
             </h1>
-            <p className="text-sm sm:text-base text-white/60 max-w-3xl leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base text-white/60 max-w-3xl leading-relaxed">
               Explore relational models, keys, ER diagrams, 3-schema architecture, and SQL query sublanguages through interactive visual simulations and hands-on playgrounds.
             </p>
           </div>
