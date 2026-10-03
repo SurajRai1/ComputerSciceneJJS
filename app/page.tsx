@@ -2,15 +2,15 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Sparkles, ArrowRight, GraduationCap, Code2 } from 'lucide-react';
+import { Sparkles, ArrowRight, Database, Code2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const grades = [
   {
     id: 11,
     label: 'Class 11',
-    subtitle: 'Web Technologies',
-    description: 'HTML, CSS & the foundations of the web',
+    subtitle: 'Web Technologies & Multimedia',
+    description: 'HTML, CSS, flexbox & multimedia pillars',
     icon: Code2,
     color: 'from-blue-500 to-cyan-400',
     glow: 'shadow-blue-500/50',
@@ -20,9 +20,9 @@ const grades = [
   {
     id: 12,
     label: 'Class 12',
-    subtitle: 'Coming Soon',
-    description: 'Advanced topics & deeper exploration',
-    icon: GraduationCap,
+    subtitle: 'Database Management (DBMS)',
+    description: 'Relational models, ER diagrams, SQL & keys',
+    icon: Database,
     color: 'from-emerald-500 to-teal-400',
     glow: 'shadow-emerald-500/50',
     accent: 'text-emerald-400',
