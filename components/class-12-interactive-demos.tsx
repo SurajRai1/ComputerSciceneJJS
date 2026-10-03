@@ -1303,6 +1303,7 @@ function ErDiagramBuilderDemo() {
         </svg>
       </div>
     </div>
+  </div>
   );
 }
 
